@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-white font-sans text-sm text-gray-900 antialiased;
+  background:
+    radial-gradient(circle at top left, rgba(238, 237, 254, 0.9), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #faf9ff 100%);
+}
+
+a {
+  @apply transition-colors;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  @apply outline-none ring-2 ring-purple-brand ring-offset-2;
+}

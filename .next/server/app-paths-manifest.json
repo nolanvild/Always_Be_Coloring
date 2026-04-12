@@ -1,0 +1,18 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/convert/route": "app/api/convert/route.js",
+  "/api/download/route": "app/api/download/route.js",
+  "/api/stripe/create-intent/route": "app/api/stripe/create-intent/route.js",
+  "/api/search/route": "app/api/search/route.js",
+  "/api/stripe/webhook/route": "app/api/stripe/webhook/route.js",
+  "/api/upload/route": "app/api/upload/route.js",
+  "/auth/login/page": "app/auth/login/page.js",
+  "/auth/signup/page": "app/auth/signup/page.js",
+  "/create/search/page": "app/create/search/page.js",
+  "/create/upload/page": "app/create/upload/page.js",
+  "/page": "app/page.js",
+  "/download/page": "app/download/page.js",
+  "/preview/page": "app/preview/page.js",
+  "/payment/page": "app/payment/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
+}
