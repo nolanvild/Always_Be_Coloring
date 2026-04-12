@@ -55,7 +55,7 @@ export default function SearchPage() {
     try {
       const response = await axios.post("/api/convert", {
         mode: "search_selection",
-        imageIds: selectedImages.map((item) => item.id)
+        images: selectedImages
       });
       setSelectedImages(selectedImages);
       setGenerationSource("search");

@@ -1,6 +1,16 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { generateBusinessColoringPage } from "@/lib/server/recraft";
+import { generateBusinessColoringPage, generateSearchColoringPage } from "@/lib/server/recraft";
+
+const searchImageSchema = z.object({
+  id: z.string(),
+  url: z.string().url(),
+  label: z.string(),
+  thumbnailUrl: z.string(),
+  width: z.number(),
+  height: z.number(),
+  source: z.string()
+});
 
 const convertRequestSchema = z.discriminatedUnion("mode", [
   z.object({
@@ -14,7 +24,7 @@ const convertRequestSchema = z.discriminatedUnion("mode", [
   }),
   z.object({
     mode: z.literal("search_selection"),
-    imageIds: z.array(z.string().min(1)).min(1)
+    images: z.array(searchImageSchema).min(1)
   }),
   z.object({
     mode: z.literal("upload_image"),
@@ -36,8 +46,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ pages: [page] });
     }
 
+    if (parsed.data.mode === "search_selection") {
+      const pages = await Promise.all(
+        parsed.data.images.map((img) => generateSearchColoringPage(img))
+      );
+      return NextResponse.json({ pages });
+    }
+
     return NextResponse.json(
-      { error: "Business-theme generation is live. Search and upload conversion remain placeholder-backed for now." },
+      { error: "Upload conversion is not yet available." },
       { status: 501 }
     );
   } catch (error) {

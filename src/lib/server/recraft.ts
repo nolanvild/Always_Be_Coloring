@@ -169,3 +169,54 @@ export async function generateBusinessColoringPage(input: BusinessGenerationInpu
     label: input.pageIdea ? `${input.themeName}: ${input.pageIdea}` : input.themeName
   };
 }
+
+export type SearchImageInput = {
+  id: string;
+  url: string;
+  label: string;
+};
+
+export async function generateSearchColoringPage(image: SearchImageInput): Promise<ColoringPage> {
+  const apiKey = getApiKey();
+
+  const sourceResponse = await fetch(image.url, { cache: "no-store" });
+  if (!sourceResponse.ok) {
+    throw new Error(`Failed to download source image (status ${sourceResponse.status}).`);
+  }
+  const contentType = sourceResponse.headers.get("content-type") || "image/jpeg";
+  const bytes = await sourceResponse.arrayBuffer();
+  const blob = new Blob([bytes], { type: contentType });
+
+  const form = new FormData();
+  form.append("image", blob, "source.jpg");
+  form.append("prompt", "printable coloring book page, simple bold black outlines, large colorable regions, no color, no fill, no shadows, white background, line art");
+  form.append("strength", "0.5");
+  form.append("model", VECTOR_MODEL);
+  form.append("style", "Line art");
+
+  const response = await fetch(`${RECRAFT_BASE_URL}/images/imageToImage`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${apiKey}` },
+    body: form,
+    cache: "no-store"
+  });
+
+  const payload = (await response.json().catch(() => null)) as RecraftGenerationResponse | null;
+  if (!response.ok) {
+    throw new Error(getRecraftErrorMessage(payload, response.status));
+  }
+
+  const resultUrl = payload?.data?.[0]?.url;
+  if (!resultUrl) {
+    throw new Error("Recraft response did not include an image URL.");
+  }
+
+  const coloringImageUrl = await downloadAssetAsDataUrl(resultUrl);
+
+  return {
+    id: `${image.id}-${Date.now()}`,
+    originalImageUrl: image.url,
+    coloringImageUrl,
+    label: image.label
+  };
+}
