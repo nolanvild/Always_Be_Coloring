@@ -1,0 +1,77 @@
+# Political terms blocklist
+# One term per line. Lines starting with # are comments.
+# Includes parties, political figures, elections, policy debates, etc.
+election
+vote
+voting
+ballot
+democrat
+republican
+congress
+senate
+senate bill
+house bill
+legislation
+partisan
+immigration policy
+border wall
+abortion
+roe v wade
+gun control
+gun rights
+second amendment
+supreme court ruling
+president
+vice president
+white house
+executive order
+political party
+campaign
+lobbyist
+gerrymander
+filibuster
+trump
+biden
+harris
+pelosi
+mcconnell
+aoc
+bernie sanders
+protest
+riot
+insurrection
+coup
+government shutdown
+debt ceiling
+deficit
+tax cut
+tax hike
+socialism
+capitalism
+fascism
+communism
+woke
+culture war
+cancel culture
+critical race theory
+affirmative action
+police defund
+law enforcement reform
+nato
+ukraine war
+israel gaza
+sanctions
+tariff
+trade war
+iran
+north korea
+russia
+china sanctions
+middle east conflict
+ceasefire
+hostage deal
+nuclear deal
+pay deal
+pay dispute
+strike action
+labor dispute

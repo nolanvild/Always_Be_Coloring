@@ -1,0 +1,73 @@
+# Brand and franchise names blocklist
+# spaCy ORG/PRODUCT NER handles most cases; this is a fallback.
+# Tech companies
+apple
+google
+microsoft
+amazon
+meta
+facebook
+instagram
+twitter
+tiktok
+youtube
+netflix
+disney
+nintendo
+sony
+samsung
+nvidia
+tesla
+openai
+anthropic
+# Retail / Consumer
+starbucks
+mcdonalds
+coca cola
+pepsi
+nike
+adidas
+gucci
+louis vuitton
+chanel
+prada
+zara
+ikea
+walmart
+target
+# Entertainment franchises
+marvel
+dc comics
+star wars
+harry potter
+pokemon
+minecraft
+fortnite
+roblox
+call of duty
+grand theft auto
+the sims
+zelda
+mario
+sonic
+batman
+spider-man
+iron man
+avengers
+lord of the rings
+game of thrones
+stranger things
+# Sports brands / teams
+nfl
+nba
+mlb
+nhl
+fifa
+espn
+# Automotive
+ford
+toyota
+bmw
+mercedes
+ferrari
+lamborghini

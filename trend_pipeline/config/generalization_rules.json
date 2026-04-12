@@ -1,0 +1,129 @@
+{
+  "category_rules": [
+    {
+      "pattern_keywords": ["rocket", "launch", "nasa", "spacex", "orbit", "iss", "astronaut", "spacecraft", "moon landing", "mars mission", "satellite", "shuttle", "cosmos", "interstellar"],
+      "abstract_theme": "space exploration",
+      "category": "space"
+    },
+    {
+      "pattern_keywords": ["coral reef", "ocean", "marine", "deep sea", "whale", "dolphin", "shark", "jellyfish", "underwater", "kelp", "sea turtle", "cephalopod", "octopus", "squid", "bioluminescent", "tide pool"],
+      "abstract_theme": "ocean life",
+      "category": "ocean"
+    },
+    {
+      "pattern_keywords": ["wildfire", "flood", "hurricane", "earthquake", "drought", "tornado", "blizzard", "storm", "climate", "weather", "natural disaster", "lightning", "monsoon"],
+      "abstract_theme": "weather and natural forces",
+      "category": "weather"
+    },
+    {
+      "pattern_keywords": ["butterfly", "bird", "eagle", "owl", "parrot", "hummingbird", "fox", "wolf", "deer", "bear", "elephant", "giraffe", "lion", "tiger", "cheetah", "penguin", "polar bear", "koala", "panda", "gorilla", "orangutan", "animal", "wildlife", "fauna"],
+      "abstract_theme": "wildlife and animals",
+      "category": "animals"
+    },
+    {
+      "pattern_keywords": ["flower", "bloom", "garden", "botanical", "mushroom", "fern", "succulent", "cactus", "forest", "woodland", "rainforest", "jungle", "moss", "ivy", "blossom", "petal", "leaf", "tree", "plant", "flora", "herbarium"],
+      "abstract_theme": "botanical garden",
+      "category": "plants"
+    },
+    {
+      "pattern_keywords": ["solar panel", "wind turbine", "renewable energy", "electric vehicle", "ev", "sustainable", "green energy", "recycling", "eco", "carbon", "emissions", "biodiversity", "conservation", "ecology"],
+      "abstract_theme": "sustainable earth",
+      "category": "nature"
+    },
+    {
+      "pattern_keywords": ["aurora", "northern lights", "milky way", "galaxy", "nebula", "comet", "meteor", "asteroid", "telescope", "observatory", "stargazing", "constellation", "black hole", "supernova"],
+      "abstract_theme": "cosmic wonders",
+      "category": "space"
+    },
+    {
+      "pattern_keywords": ["mountain", "hiking", "trail", "canyon", "cliff", "valley", "glacier", "waterfall", "river", "lake", "landscape", "scenic", "national park", "wilderness", "summit", "alpine"],
+      "abstract_theme": "mountain landscapes",
+      "category": "nature"
+    },
+    {
+      "pattern_keywords": ["beach", "wave", "surf", "coastal", "island", "tropical", "palm tree", "sand dune", "lighthouse", "harbor", "sailing", "boat", "reef", "lagoon"],
+      "abstract_theme": "tropical shores",
+      "category": "nature"
+    },
+    {
+      "pattern_keywords": ["robot", "artificial intelligence", "machine learning", "drone", "coding", "circuit", "technology", "chip", "processor", "cyborg", "automation", "digital", "algorithm", "3d printing"],
+      "abstract_theme": "future technology",
+      "category": "technology"
+    },
+    {
+      "pattern_keywords": ["cryptocurrency", "blockchain", "network", "data", "internet", "cyber", "virtual reality", "augmented reality", "metaverse", "quantum", "fiber optic", "server", "cloud computing"],
+      "abstract_theme": "digital networks",
+      "category": "technology"
+    },
+    {
+      "pattern_keywords": ["bread", "pastry", "cake", "dessert", "cooking", "recipe", "kitchen", "chef", "baking", "spice", "herb", "feast", "harvest", "fruit", "vegetable", "farm to table", "cuisine", "food"],
+      "abstract_theme": "food and cooking",
+      "category": "food"
+    },
+    {
+      "pattern_keywords": ["architecture", "building", "skyscraper", "cathedral", "castle", "bridge", "dome", "tower", "ancient ruins", "temple", "monument", "cityscape", "urban", "facade"],
+      "abstract_theme": "architectural wonders",
+      "category": "architecture"
+    },
+    {
+      "pattern_keywords": ["train", "steam engine", "locomotive", "aircraft", "jet", "helicopter", "hot air balloon", "ship", "submarine", "motorcycle", "race car", "classic car", "vehicle", "transportation"],
+      "abstract_theme": "vehicles and transportation",
+      "category": "vehicles"
+    },
+    {
+      "pattern_keywords": ["painting", "sculpture", "mosaic", "mural", "abstract art", "mandala", "pattern", "textile", "weaving", "pottery", "ceramic", "origami", "calligraphy", "illustration", "drawing", "sketch"],
+      "abstract_theme": "art and patterns",
+      "category": "art"
+    },
+    {
+      "pattern_keywords": ["dinosaur", "fossil", "prehistoric", "paleontology", "jurassic", "extinction", "ancient", "archaeology", "excavation", "caveman", "stone age"],
+      "abstract_theme": "prehistoric world",
+      "category": "science"
+    },
+    {
+      "pattern_keywords": ["microscope", "biology", "cell", "dna", "atom", "molecule", "chemistry", "laboratory", "experiment", "physics", "astronomy", "geology", "science", "research", "discovery"],
+      "abstract_theme": "science and discovery",
+      "category": "science"
+    },
+    {
+      "pattern_keywords": ["mushroom", "fungi", "spore", "lichen", "bioluminescence", "forest floor", "mycelium"],
+      "abstract_theme": "fungi and forest floor",
+      "category": "plants"
+    },
+    {
+      "pattern_keywords": ["insect", "bee", "butterfly", "dragonfly", "ant", "spider", "beetle", "caterpillar", "firefly", "praying mantis", "ladybug", "cricket", "moth"],
+      "abstract_theme": "world of insects",
+      "category": "animals"
+    },
+    {
+      "pattern_keywords": ["yoga", "meditation", "wellness", "mindfulness", "zen", "calm", "relax", "nature therapy", "healing", "retreat", "spa", "spiritual growth"],
+      "abstract_theme": "mindfulness and wellness",
+      "category": "art"
+    },
+    {
+      "pattern_keywords": ["festival", "carnival", "parade", "celebration", "firework", "lantern", "decoration", "cultural tradition", "ceremony", "folk art", "dance", "music"],
+      "abstract_theme": "festivals and celebrations",
+      "category": "art"
+    },
+    {
+      "pattern_keywords": ["map", "globe", "compass", "voyage", "expedition", "adventure", "jungle explorer", "treasure", "discovery", "navigation", "geography", "world"],
+      "abstract_theme": "exploration and adventure",
+      "category": "nature"
+    },
+    {
+      "pattern_keywords": ["cat", "dog", "pet", "puppy", "kitten", "hamster", "rabbit", "parrot", "goldfish", "guinea pig", "domestic animal"],
+      "abstract_theme": "pets and companions",
+      "category": "animals"
+    },
+    {
+      "pattern_keywords": ["fairy tale", "fantasy", "magical", "enchanted", "dragon", "unicorn", "mermaid", "phoenix", "mythical", "creature", "legend", "folklore", "fable"],
+      "abstract_theme": "magical creatures",
+      "category": "art"
+    },
+    {
+      "pattern_keywords": ["autumn", "fall", "harvest", "pumpkin", "maple leaf", "acorn", "season", "winter", "snow", "spring", "summer", "seasons"],
+      "abstract_theme": "seasons of the year",
+      "category": "nature"
+    }
+  ]
+}

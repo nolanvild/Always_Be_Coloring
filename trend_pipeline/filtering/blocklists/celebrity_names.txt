@@ -1,0 +1,57 @@
+# Celebrity names blocklist — first/last names and common shorthand
+# Updated manually. spaCy PERSON NER handles most cases; this is a fallback.
+taylor swift
+beyonce
+drake
+kanye west
+rihanna
+kim kardashian
+elon musk
+jeff bezos
+mark zuckerberg
+oprah
+lebron james
+cristiano ronaldo
+lionel messi
+ariana grande
+billie eilish
+doja cat
+bad bunny
+the weeknd
+jay z
+eminem
+justin bieber
+selena gomez
+miley cyrus
+lady gaga
+katy perry
+madonna
+britney spears
+michael jackson
+elvis presley
+johnny depp
+brad pitt
+angelina jolie
+jennifer aniston
+leonardo dicaprio
+tom hanks
+meryl streep
+dwayne johnson
+ryan reynolds
+will smith
+denzel washington
+scarlett johansson
+margot robbie
+zendaya
+timothee chalamet
+harry styles
+ed sheeran
+adele
+sam smith
+olivia rodrigo
+sabrina carpenter
+charli xcx
+travis scott
+post malone
+bieber
+justin bieber
