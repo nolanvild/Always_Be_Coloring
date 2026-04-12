@@ -33,18 +33,23 @@ export default function DownloadPage() {
 
   const doDownload = async (formatId = selectedFormat?.id ?? DEFAULT_FORMAT_ID) => {
     try {
-      const response = await axios.get("/api/download", {
-        params: {
-          pageIds: coloringPages.map((page) => page.id).join(","),
+      const response = await axios.post(
+        "/api/download",
+        {
+          pages: coloringPages.map((page) => ({
+            id: page.id,
+            coloringImageUrl: page.coloringImageUrl,
+            label: page.label
+          })),
           format: formatId,
-          options: JSON.stringify({
+          options: {
             includeTitlePage: true,
             addPageNumbers: true,
             cropMarks: false
-          })
+          }
         },
-        responseType: "blob"
-      });
+        { responseType: "blob" }
+      );
 
       const url = URL.createObjectURL(response.data);
       const anchor = document.createElement("a");

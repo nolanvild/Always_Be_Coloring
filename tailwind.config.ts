@@ -35,6 +35,15 @@ const config: Config = {
       },
       boxShadow: {
         soft: "0 12px 32px rgba(127, 119, 221, 0.12)"
+      },
+      keyframes: {
+        shimmer: {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" }
+        }
+      },
+      animation: {
+        shimmer: "shimmer 1.4s ease-in-out infinite"
       }
     }
   },
