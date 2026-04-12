@@ -124,11 +124,16 @@ def _build_source_signals(candidate: TrendCandidate) -> Dict[str, Any]:
     rss_sigs = candidate.source_signals.get("rss", [])
     if rss_sigs:
         feed_sources = list({s.metadata.get("feed_name", "") for s in rss_sigs})
+        all_headlines = [
+            s.metadata.get("full_headline") or s.metadata.get("original_term") or s.term
+            for s in rss_sigs
+        ]
         signals["rss"] = {
-            "present":        True,
-            "article_count":  len(rss_sigs),
-            "feed_sources":   feed_sources,
-            "headline_sample": rss_sigs[0].metadata.get("original_term", rss_sigs[0].term)[:200],
+            "present":               True,
+            "article_count":         len(rss_sigs),
+            "feed_sources":          feed_sources,
+            "headline_sample":       all_headlines[0][:200],
+            "contributing_headlines": [h[:200] for h in all_headlines],
         }
     else:
         signals["rss"] = {"present": False}
@@ -150,6 +155,37 @@ def _build_source_signals(candidate: TrendCandidate) -> Dict[str, Any]:
         }
 
     return signals
+
+
+def _pick_best_headline(candidate: TrendCandidate, abstract_theme: str, category: str) -> str:
+    """
+    Select the most representative headline from all signals in the group.
+
+    Scores each full_headline by token overlap with the abstract theme + category
+    so the displayed raw_concept reflects why the theme was chosen, not which
+    NLP fragment happened to be seen first (which can be a dark/unrelated headline).
+    """
+    theme_tokens = set((abstract_theme + " " + category).lower().split())
+    best_headline = candidate.concept   # fallback: original NLP fragment
+    best_score    = -1.0
+
+    for sigs in candidate.source_signals.values():
+        for sig in sigs:
+            headline = (
+                sig.metadata.get("full_headline")
+                or sig.metadata.get("original_term")
+                or ""
+            )
+            if not headline:
+                continue
+            hl_tokens = set(headline.lower().split())
+            union = theme_tokens | hl_tokens
+            score = len(theme_tokens & hl_tokens) / len(union) if union else 0.0
+            if score > best_score:
+                best_score    = score
+                best_headline = headline
+
+    return best_headline[:300]
 
 
 def _build_trending_reason(candidate: TrendCandidate) -> str:
@@ -201,6 +237,7 @@ def build_theme(
     audience     = _AUDIENCE_MAP.get(category, "general")
     source_sigs  = _build_source_signals(candidate)
     trending_why = _build_trending_reason(candidate)
+    best_headline = _pick_best_headline(candidate, abstract_theme, category)
 
     description = (
         f"A coloring book exploring the world of {abstract_theme.lower()}. "
@@ -213,7 +250,7 @@ def build_theme(
         theme_name=abstract_theme.title(),
         description=description,
         category=category,
-        raw_concept=candidate.concept,
+        raw_concept=best_headline,
         source_signals=source_sigs,
         trending_reason=trending_why,
         target_audience=audience,

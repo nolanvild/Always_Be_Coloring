@@ -91,3 +91,9 @@ LOG_BACKUP_COUNT = 5
 
 # ─── NLP ─────────────────────────────────────────────────────────────────────
 SPACY_MODEL = "en_core_web_sm"
+
+# ─── Publishing (Gumroad) ─────────────────────────────────────────────────────
+GUMROAD_ACCESS_TOKEN     = os.getenv("GUMROAD_ACCESS_TOKEN", "")
+GUMROAD_DEFAULT_PRICE_CENTS = 499          # $4.99 per coloring book
+PREVIEWS_DIR             = DATA_DIR / "previews"
+PREVIEWS_DIR.mkdir(parents=True, exist_ok=True)

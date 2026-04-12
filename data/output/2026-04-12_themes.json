@@ -1,0 +1,688 @@
+{
+  "run_metadata": {
+    "run_id": "418d87a3-9bf3-4eb4-ac64-5c4d4193be05",
+    "run_timestamp": "2026-04-12T22:36:05.956635+00:00",
+    "sources_active": [
+      "rss"
+    ],
+    "sources_failed": [
+      "reddit",
+      "google_trends"
+    ],
+    "total_candidates": 10,
+    "total_accepted": 5,
+    "total_rejected": 5,
+    "twitter_available": false
+  },
+  "run_summary": {
+    "themes_ranked": [
+      {
+        "rank": 1,
+        "theme_name": "Space Exploration",
+        "category": "space",
+        "coloring_book_score": 78,
+        "high_priority": false,
+        "review_required": false,
+        "key_strengths": [
+          "visual_richness",
+          "audience_clarity",
+          "line_art_suitability",
+          "safety_score"
+        ],
+        "improvement_opportunities": [
+          "page_variety",
+          "trend_relevance"
+        ]
+      },
+      {
+        "rank": 2,
+        "theme_name": "Ocean Life",
+        "category": "ocean",
+        "coloring_book_score": 77,
+        "high_priority": false,
+        "review_required": false,
+        "key_strengths": [
+          "visual_richness",
+          "audience_clarity",
+          "line_art_suitability",
+          "safety_score"
+        ],
+        "improvement_opportunities": [
+          "page_variety",
+          "trend_relevance"
+        ]
+      },
+      {
+        "rank": 3,
+        "theme_name": "Tropical Shores",
+        "category": "nature",
+        "coloring_book_score": 75,
+        "high_priority": false,
+        "review_required": false,
+        "key_strengths": [
+          "visual_richness",
+          "audience_clarity",
+          "line_art_suitability"
+        ],
+        "improvement_opportunities": [
+          "page_variety",
+          "trend_relevance"
+        ]
+      },
+      {
+        "rank": 4,
+        "theme_name": "Botanical Garden",
+        "category": "plants",
+        "coloring_book_score": 72,
+        "high_priority": false,
+        "review_required": false,
+        "key_strengths": [
+          "visual_richness",
+          "audience_clarity",
+          "line_art_suitability"
+        ],
+        "improvement_opportunities": [
+          "page_variety",
+          "trend_relevance"
+        ]
+      },
+      {
+        "rank": 5,
+        "theme_name": "Science And Discovery",
+        "category": "science",
+        "coloring_book_score": 70,
+        "high_priority": false,
+        "review_required": false,
+        "key_strengths": [
+          "visual_richness",
+          "audience_clarity",
+          "safety_score"
+        ],
+        "improvement_opportunities": [
+          "page_variety",
+          "trend_relevance"
+        ]
+      }
+    ],
+    "score_spread": {
+      "highest": 78,
+      "lowest": 70,
+      "mean": 74.4
+    },
+    "primary_score_differentiator": "line_art_suitability",
+    "dimension_variance": {
+      "visual_richness": 0.0,
+      "page_variety": 0.0,
+      "audience_clarity": 1.04,
+      "line_art_suitability": 4.96,
+      "trend_relevance": 0.922,
+      "safety_score": 0.96
+    },
+    "session_notes": "Reddit was not active - activating it would add upvote-weighted signals and meaningfully raise trend_relevance scores | Google Trends was not active - spike and sustained-interest signals are missing; trend_relevance scores are conservatively low | The dimension with the most score variance this run is 'line_art_suitability' - themes that differ most do so on this axis"
+  },
+  "themes": [
+    {
+      "theme_id": "79605c04-9b6f-4b0f-a3e2-0a7ea437ee63",
+      "theme_name": "Space Exploration",
+      "description": "A coloring book exploring the world of space exploration. This theme offers a rich variety of visual scenes and intricate details suitable for children 9 12 coloring enthusiasts.",
+      "category": "space",
+      "raw_concept": "artemis ii return to the moon",
+      "source_signals": {
+        "reddit": {
+          "present": false
+        },
+        "google_trends": {
+          "present": false
+        },
+        "rss": {
+          "present": true,
+          "article_count": 9,
+          "feed_sources": [
+            "bbc_science",
+            "nbc_news",
+            "smithsonian",
+            "abc_news",
+            "bbc_top",
+            "nasa"
+          ],
+          "headline_sample": "artemis ii return to the moon",
+          "contributing_headlines": [
+            "artemis ii return to the moon",
+            "back to earth what happens to the artemis ii astronauts now",
+            "artemis ii mission was a triumph now comes the hard part",
+            "has artemis ii shown we can land on the moon again",
+            "what s next in reaching the moon after artemis ii",
+            "watch highlights of artemis ii s return to earth",
+            "watch artemis ii crew arrives back to houston after the dramatic pacific splashdown",
+            "artemis ii splashes down",
+            "artemis 2 astronauts successfully return to earth after completing a historic mission around the moon"
+          ]
+        },
+        "twitter": {
+          "present": false,
+          "available": false,
+          "error": "not_checked"
+        }
+      },
+      "trending_reason": "appeared in 6 sources",
+      "target_audience": "children_9_12",
+      "coloring_book_score": 78,
+      "score_breakdown": {
+        "visual_richness": 25.0,
+        "page_variety": 7.5,
+        "audience_clarity": 15.0,
+        "line_art_suitability": 18.0,
+        "trend_relevance": 4.8,
+        "safety_score": 8.0
+      },
+      "page_ideas": [
+        "An astronaut planting a flag on a new world",
+        "A rover exploring a rocky alien surface with a distant planet on the horizon",
+        "A spacecraft entering orbit around a gas giant planet",
+        "Mission patches and insignia from imaginary space programs",
+        "A rocket blueprint with detailed technical drawings",
+        "A spacesuit helmet reflecting a distant planet",
+        "The surface of the Moon with craters and Earth in the background",
+        "A rocket launching through billowing clouds of colorful exhaust"
+      ],
+      "safety_notes": [],
+      "review_required": false,
+      "high_priority": false,
+      "created_at": "2026-04-12T22:36:05.911598+00:00",
+      "analysis": {
+        "why_trending": "Covered in 9 articles across 6 RSS feeds (bbc_science, nbc_news, smithsonian, abc_news...). Note: Reddit and Google Trends not active this run - trend signal strength is lower than it would be with full source coverage.",
+        "why_coloring_book": "Space Exploration works well as a coloring book because space scenes combine geometric precision (spacecraft, stations) with organic forms (nebulae, planets). The 'children 9 12' audience segment is a natural fit for this category. Page ideas span a high variety of visual types, keeping the book engaging across all skill levels. ",
+        "score_rationale": {
+          "visual_richness": {
+            "score": 25.0,
+            "max": 25.0,
+            "pct": 100.0,
+            "summary": "25.0/25 (100%) - 9 distinct visual element types detected across 8 page ideas (8+ hits the cap)"
+          },
+          "page_variety": {
+            "score": 7.5,
+            "max": 20.0,
+            "pct": 37.5,
+            "summary": "7.5/20 (38%) - 8 page ideas generated - adding more page ideas to 10+ would increase this"
+          },
+          "audience_clarity": {
+            "score": 15.0,
+            "max": 15.0,
+            "pct": 100.0,
+            "summary": "15.0/15 (100%) - 'children 9 12' is a highly specific, well-defined audience"
+          },
+          "line_art_suitability": {
+            "score": 18.0,
+            "max": 20.0,
+            "pct": 90.0,
+            "summary": "18.0/20 (90%) - space scenes combine geometric precision (spacecraft, stations) with organic forms (nebulae, planets)"
+          },
+          "trend_relevance": {
+            "score": 4.8,
+            "max": 12.0,
+            "pct": 40.0,
+            "summary": "4.8/12 (40%) - Aggregate trend signal 40.0/100 (sources active: RSS). Activating more sources (Reddit, Google Trends) would significantly boost this dimension"
+          },
+          "safety_score": {
+            "score": 8.0,
+            "max": 8.0,
+            "pct": 100.0,
+            "summary": "8.0/8 (100%) - No content concerns flagged by any filter"
+          }
+        },
+        "key_strengths": [
+          "visual_richness",
+          "audience_clarity",
+          "line_art_suitability",
+          "safety_score"
+        ],
+        "improvement_opportunities": [
+          "page_variety",
+          "trend_relevance"
+        ]
+      }
+    },
+    {
+      "theme_id": "54ebba9f-ecb5-468d-9492-b400634a1d69",
+      "theme_name": "Ocean Life",
+      "description": "A coloring book exploring the world of ocean life. This theme offers a rich variety of visual scenes and intricate details suitable for family coloring enthusiasts.",
+      "category": "ocean",
+      "raw_concept": "i ve been a sex educator for six years why did i start doubting my contraception choices",
+      "source_signals": {
+        "reddit": {
+          "present": false
+        },
+        "google_trends": {
+          "present": false
+        },
+        "rss": {
+          "present": true,
+          "article_count": 2,
+          "feed_sources": [
+            "smithsonian",
+            "bbc_top"
+          ],
+          "headline_sample": "i ve been a sex educator for six years why did i start doubting my contraception choices",
+          "contributing_headlines": [
+            "i ve been a sex educator for six years why did i start doubting my contraception choices",
+            "octopus sex just got weirder in addition to depositing sperm males specialized mating arm can taste female hormones"
+          ]
+        },
+        "twitter": {
+          "present": false,
+          "available": false,
+          "error": "not_checked"
+        }
+      },
+      "trending_reason": "appeared in 2 sources",
+      "target_audience": "family",
+      "coloring_book_score": 77,
+      "score_breakdown": {
+        "visual_richness": 25.0,
+        "page_variety": 7.5,
+        "audience_clarity": 14.0,
+        "line_art_suitability": 20.0,
+        "trend_relevance": 2.4,
+        "safety_score": 8.0
+      },
+      "page_ideas": [
+        "An underwater garden of sea grass and small fish",
+        "A deep-sea scene filled with bioluminescent creatures",
+        "A cross-section view of a coral reef ecosystem",
+        "A tide pool filled with starfish and hermit crabs",
+        "An anglerfish in the dark deep sea with a glowing lure",
+        "A jellyfish with trailing tentacles in open water",
+        "A pod of dolphins leaping through ocean waves",
+        "Ocean waves breaking on a rocky coastline"
+      ],
+      "safety_notes": [],
+      "review_required": false,
+      "high_priority": false,
+      "created_at": "2026-04-12T22:36:05.923628+00:00",
+      "analysis": {
+        "why_trending": "Covered in 2 articles across 2 RSS feeds (smithsonian, bbc_top). Note: Reddit and Google Trends not active this run - trend signal strength is lower than it would be with full source coverage.",
+        "why_coloring_book": "Ocean Life works well as a coloring book because underwater scenes offer flowing organic shapes (waves, coral, fish) with layered depth. The 'family' audience segment is a natural fit for this category. Page ideas span a high variety of visual types, keeping the book engaging across all skill levels. ",
+        "score_rationale": {
+          "visual_richness": {
+            "score": 25.0,
+            "max": 25.0,
+            "pct": 100.0,
+            "summary": "25.0/25 (100%) - 11 distinct visual element types detected across 8 page ideas (8+ hits the cap)"
+          },
+          "page_variety": {
+            "score": 7.5,
+            "max": 20.0,
+            "pct": 37.5,
+            "summary": "7.5/20 (38%) - 8 page ideas generated - adding more page ideas to 10+ would increase this"
+          },
+          "audience_clarity": {
+            "score": 14.0,
+            "max": 15.0,
+            "pct": 93.3,
+            "summary": "14.0/15 (93%) - 'family' is a highly specific, well-defined audience"
+          },
+          "line_art_suitability": {
+            "score": 20.0,
+            "max": 20.0,
+            "pct": 100.0,
+            "summary": "20.0/20 (100%) - underwater scenes offer flowing organic shapes (waves, coral, fish) with layered depth"
+          },
+          "trend_relevance": {
+            "score": 2.4,
+            "max": 12.0,
+            "pct": 20.0,
+            "summary": "2.4/12 (20%) - Aggregate trend signal 20.0/100 (sources active: RSS). Activating more sources (Reddit, Google Trends) would significantly boost this dimension"
+          },
+          "safety_score": {
+            "score": 8.0,
+            "max": 8.0,
+            "pct": 100.0,
+            "summary": "8.0/8 (100%) - No content concerns flagged by any filter"
+          }
+        },
+        "key_strengths": [
+          "visual_richness",
+          "audience_clarity",
+          "line_art_suitability",
+          "safety_score"
+        ],
+        "improvement_opportunities": [
+          "page_variety",
+          "trend_relevance"
+        ]
+      }
+    },
+    {
+      "theme_id": "c410a2cf-838e-412f-88f8-39f577ca3c2d",
+      "theme_name": "Tropical Shores",
+      "description": "A coloring book exploring the world of tropical shores. This theme offers a rich variety of visual scenes and intricate details suitable for family coloring enthusiasts.",
+      "category": "nature",
+      "raw_concept": "cuban president says if we need to die we ll die to prevent u s invasion full interview",
+      "source_signals": {
+        "reddit": {
+          "present": false
+        },
+        "google_trends": {
+          "present": false
+        },
+        "rss": {
+          "present": true,
+          "article_count": 3,
+          "feed_sources": [
+            "abc_news",
+            "nbc_news"
+          ],
+          "headline_sample": "cuban president says if we need to die we ll die to prevent u s invasion full interview",
+          "contributing_headlines": [
+            "cuban president says if we need to die we ll die to prevent u s invasion full interview",
+            "cuba s president says we would die to defend against u s invasion",
+            "cuba s president warns us against attacking island or trying to depose him"
+          ]
+        },
+        "twitter": {
+          "present": false,
+          "available": false,
+          "error": "not_checked"
+        }
+      },
+      "trending_reason": "appeared in 2 sources",
+      "target_audience": "family",
+      "coloring_book_score": 75,
+      "score_breakdown": {
+        "visual_richness": 25.0,
+        "page_variety": 7.5,
+        "audience_clarity": 14.0,
+        "line_art_suitability": 20.0,
+        "trend_relevance": 2.4,
+        "safety_score": 6.0
+      },
+      "page_ideas": [
+        "A hammock strung between two palms overlooking the ocean",
+        "A beach hut surrounded by palm leaves",
+        "Mangrove roots at the edge of a tropical shore",
+        "Waves at different stages of breaking",
+        "An aerial view of a small tropical island",
+        "Tropical fish swimming over a sandy reef flat",
+        "A sailboat anchored in a clear blue lagoon",
+        "A sunset over the ocean with silhouetted palm trees"
+      ],
+      "safety_notes": [
+        "Category 'politics' flagged (confidence 0.40): ['vice president', 'president']"
+      ],
+      "review_required": false,
+      "high_priority": false,
+      "created_at": "2026-04-12T22:36:05.947631+00:00",
+      "analysis": {
+        "why_trending": "Covered in 3 articles across 2 RSS feeds (abc_news, nbc_news). Note: Reddit and Google Trends not active this run - trend signal strength is lower than it would be with full source coverage.",
+        "why_coloring_book": "Tropical Shores works well as a coloring book because natural landscapes provide rich organic detail - leaves, bark, terrain - without hard-to-draw mechanical elements. The 'family' audience segment is a natural fit for this category. Page ideas span a high variety of visual types, keeping the book engaging across all skill levels. Content review flagged 1 item(s) - these have been assessed and accepted. ",
+        "score_rationale": {
+          "visual_richness": {
+            "score": 25.0,
+            "max": 25.0,
+            "pct": 100.0,
+            "summary": "25.0/25 (100%) - 8 distinct visual element types detected across 8 page ideas (8+ hits the cap)"
+          },
+          "page_variety": {
+            "score": 7.5,
+            "max": 20.0,
+            "pct": 37.5,
+            "summary": "7.5/20 (38%) - 8 page ideas generated - adding more page ideas to 10+ would increase this"
+          },
+          "audience_clarity": {
+            "score": 14.0,
+            "max": 15.0,
+            "pct": 93.3,
+            "summary": "14.0/15 (93%) - 'family' is a highly specific, well-defined audience"
+          },
+          "line_art_suitability": {
+            "score": 20.0,
+            "max": 20.0,
+            "pct": 100.0,
+            "summary": "20.0/20 (100%) - natural landscapes provide rich organic detail - leaves, bark, terrain - without hard-to-draw mechanical elements"
+          },
+          "trend_relevance": {
+            "score": 2.4,
+            "max": 12.0,
+            "pct": 20.0,
+            "summary": "2.4/12 (20%) - Aggregate trend signal 20.0/100 (sources active: RSS). Activating more sources (Reddit, Google Trends) would significantly boost this dimension"
+          },
+          "safety_score": {
+            "score": 6.0,
+            "max": 8.0,
+            "pct": 75.0,
+            "summary": "6.0/8 (75%) - 1 content flag(s): Category 'politics' flagged (confidence 0.40): ['vice president', 'president']"
+          }
+        },
+        "key_strengths": [
+          "visual_richness",
+          "audience_clarity",
+          "line_art_suitability"
+        ],
+        "improvement_opportunities": [
+          "page_variety",
+          "trend_relevance"
+        ]
+      }
+    },
+    {
+      "theme_id": "2b89f3bc-1354-4fe0-8cef-f3258177b067",
+      "theme_name": "Botanical Garden",
+      "description": "A coloring book exploring the world of botanical garden. This theme offers a rich variety of visual scenes and intricate details suitable for adults coloring enthusiasts.",
+      "category": "plants",
+      "raw_concept": "watch dog helps his grandma in the garden",
+      "source_signals": {
+        "reddit": {
+          "present": false
+        },
+        "google_trends": {
+          "present": false
+        },
+        "rss": {
+          "present": true,
+          "article_count": 2,
+          "feed_sources": [
+            "abc_news",
+            "bbc_top"
+          ],
+          "headline_sample": "woman killed in dog attack at house named",
+          "contributing_headlines": [
+            "woman killed in dog attack at house named",
+            "watch dog helps his grandma in the garden"
+          ]
+        },
+        "twitter": {
+          "present": false,
+          "available": false,
+          "error": "not_checked"
+        }
+      },
+      "trending_reason": "appeared in 2 sources",
+      "target_audience": "adults",
+      "coloring_book_score": 72,
+      "score_breakdown": {
+        "visual_richness": 25.0,
+        "page_variety": 7.5,
+        "audience_clarity": 12.0,
+        "line_art_suitability": 19.0,
+        "trend_relevance": 2.4,
+        "safety_score": 6.0
+      },
+      "page_ideas": [
+        "A cross-section of a flower showing petals and stamens",
+        "Ferns unfurling in a shaded glade",
+        "Mushrooms growing in a mossy forest floor",
+        "Cherry blossoms falling in a light breeze",
+        "Wildflowers growing along a country path",
+        "Seed pods and berries from various trees arranged decoratively",
+        "A towering oak tree with detailed bark texture",
+        "An intricate mandala made of flower petals"
+      ],
+      "safety_notes": [
+        "Category 'violence' flagged (confidence 0.35): ['attack']"
+      ],
+      "review_required": false,
+      "high_priority": false,
+      "created_at": "2026-04-12T22:36:05.915637+00:00",
+      "analysis": {
+        "why_trending": "Covered in 2 articles across 2 RSS feeds (abc_news, bbc_top). Note: Reddit and Google Trends not active this run - trend signal strength is lower than it would be with full source coverage.",
+        "why_coloring_book": "Botanical Garden works well as a coloring book because botanical subjects reward fine detail work: leaf veins, petal arrangements, stem textures. The 'adults' audience segment is a natural fit for this category. Page ideas span a high variety of visual types, keeping the book engaging across all skill levels. Content review flagged 1 item(s) - these have been assessed and accepted. ",
+        "score_rationale": {
+          "visual_richness": {
+            "score": 25.0,
+            "max": 25.0,
+            "pct": 100.0,
+            "summary": "25.0/25 (100%) - 8 distinct visual element types detected across 8 page ideas (8+ hits the cap)"
+          },
+          "page_variety": {
+            "score": 7.5,
+            "max": 20.0,
+            "pct": 37.5,
+            "summary": "7.5/20 (38%) - 8 page ideas generated - adding more page ideas to 10+ would increase this"
+          },
+          "audience_clarity": {
+            "score": 12.0,
+            "max": 15.0,
+            "pct": 80.0,
+            "summary": "12.0/15 (80%) - 'adults' is a reasonably specific audience segment"
+          },
+          "line_art_suitability": {
+            "score": 19.0,
+            "max": 20.0,
+            "pct": 95.0,
+            "summary": "19.0/20 (95%) - botanical subjects reward fine detail work: leaf veins, petal arrangements, stem textures"
+          },
+          "trend_relevance": {
+            "score": 2.4,
+            "max": 12.0,
+            "pct": 20.0,
+            "summary": "2.4/12 (20%) - Aggregate trend signal 20.0/100 (sources active: RSS). Activating more sources (Reddit, Google Trends) would significantly boost this dimension"
+          },
+          "safety_score": {
+            "score": 6.0,
+            "max": 8.0,
+            "pct": 75.0,
+            "summary": "6.0/8 (75%) - 1 content flag(s): Category 'violence' flagged (confidence 0.35): ['attack']"
+          }
+        },
+        "key_strengths": [
+          "visual_richness",
+          "audience_clarity",
+          "line_art_suitability"
+        ],
+        "improvement_opportunities": [
+          "page_variety",
+          "trend_relevance"
+        ]
+      }
+    },
+    {
+      "theme_id": "c742fffd-eb6f-4791-b318-3a84b1face47",
+      "theme_name": "Science And Discovery",
+      "description": "A coloring book exploring the world of science and discovery. This theme offers a rich variety of visual scenes and intricate details suitable for teens coloring enthusiasts.",
+      "category": "science",
+      "raw_concept": "bbc inside science",
+      "source_signals": {
+        "reddit": {
+          "present": false
+        },
+        "google_trends": {
+          "present": false
+        },
+        "rss": {
+          "present": true,
+          "article_count": 2,
+          "feed_sources": [
+            "bbc_science",
+            "bbc_top"
+          ],
+          "headline_sample": "bbc news app",
+          "contributing_headlines": [
+            "bbc news app",
+            "bbc inside science"
+          ]
+        },
+        "twitter": {
+          "present": false,
+          "available": false,
+          "error": "not_checked"
+        }
+      },
+      "trending_reason": "appeared in 2 sources",
+      "target_audience": "teens",
+      "coloring_book_score": 70,
+      "score_breakdown": {
+        "visual_richness": 25.0,
+        "page_variety": 7.5,
+        "audience_clarity": 13.0,
+        "line_art_suitability": 14.0,
+        "trend_relevance": 2.4,
+        "safety_score": 8.0
+      },
+      "page_ideas": [
+        "A geology map showing tectonic plates",
+        "A plant growing in stages from seed to flower",
+        "A food web showing predator-prey relationships",
+        "A star map showing distances and star types",
+        "A water cycle diagram shown as a landscape",
+        "A DNA double helix shown in decorative detail",
+        "Mathematical spirals and geometric shapes in nature",
+        "A robot arm performing a delicate experiment"
+      ],
+      "safety_notes": [],
+      "review_required": false,
+      "high_priority": false,
+      "created_at": "2026-04-12T22:36:05.928595+00:00",
+      "analysis": {
+        "why_trending": "Covered in 2 articles across 2 RSS feeds (bbc_science, bbc_top). Note: Reddit and Google Trends not active this run - trend signal strength is lower than it would be with full source coverage.",
+        "why_coloring_book": "Science And Discovery works well as a coloring book because scientific diagrams and natural phenomena offer a balance of precision and wonder. The 'teens' audience segment is a natural fit for this category. Page ideas span a high variety of visual types, keeping the book engaging across all skill levels. ",
+        "score_rationale": {
+          "visual_richness": {
+            "score": 25.0,
+            "max": 25.0,
+            "pct": 100.0,
+            "summary": "25.0/25 (100%) - 11 distinct visual element types detected across 8 page ideas (8+ hits the cap)"
+          },
+          "page_variety": {
+            "score": 7.5,
+            "max": 20.0,
+            "pct": 37.5,
+            "summary": "7.5/20 (38%) - 8 page ideas generated - adding more page ideas to 10+ would increase this"
+          },
+          "audience_clarity": {
+            "score": 13.0,
+            "max": 15.0,
+            "pct": 86.7,
+            "summary": "13.0/15 (87%) - 'teens' is a reasonably specific audience segment"
+          },
+          "line_art_suitability": {
+            "score": 14.0,
+            "max": 20.0,
+            "pct": 70.0,
+            "summary": "14.0/20 (70%) - scientific diagrams and natural phenomena offer a balance of precision and wonder"
+          },
+          "trend_relevance": {
+            "score": 2.4,
+            "max": 12.0,
+            "pct": 20.0,
+            "summary": "2.4/12 (20%) - Aggregate trend signal 20.0/100 (sources active: RSS). Activating more sources (Reddit, Google Trends) would significantly boost this dimension"
+          },
+          "safety_score": {
+            "score": 8.0,
+            "max": 8.0,
+            "pct": 100.0,
+            "summary": "8.0/8 (100%) - No content concerns flagged by any filter"
+          }
+        },
+        "key_strengths": [
+          "visual_richness",
+          "audience_clarity",
+          "safety_score"
+        ],
+        "improvement_opportunities": [
+          "page_variety",
+          "trend_relevance"
+        ]
+      }
+    }
+  ]
+}

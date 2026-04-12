@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="595" height="842"
+     viewBox="0 0 595 842">
+
+  <!-- Outer border -->
+  <rect x="36" y="36" width="523" height="770"
+        fill="white" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text font-family="Georgia, serif" font-size="17" fill="#111"
+        text-anchor="middle" dominant-baseline="auto">
+        <tspan x="297" y="64">Fishing boats returning to a harbor at dawn</tspan>
+  </text>
+
+  <!-- Coloring area border (dashed) -->
+  <rect x="36" y="126" width="523" height="650"
+        fill="#fafafa" stroke="#aaa" stroke-width="1"
+        stroke-dasharray="8 4" rx="4"/>
+
+  <!-- PLACEHOLDER label -->
+  <text x="297" y="433"
+        font-family="Arial, sans-serif" font-size="22" font-weight="bold"
+        fill="#ccc" text-anchor="middle" dominant-baseline="middle"
+        letter-spacing="4">PLACEHOLDER</text>
+
+  <!-- Sub-label -->
+  <text x="297" y="465"
+        font-family="Arial, sans-serif" font-size="12"
+        fill="#bbb" text-anchor="middle" dominant-baseline="middle">
+    replace with generated coloring art
+  </text>
+
+  <!-- Footer -->
+  <text x="297" y="798"
+        font-family="Arial, sans-serif" font-size="10" fill="#999"
+        text-anchor="middle">Page 6 of 8  ·  Tropical Shores Coloring Book</text>
+
+</svg>
