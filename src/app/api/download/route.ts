@@ -1,0 +1,45 @@
+const minimalPdf = `%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [3 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 300 300] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 49 >>
+stream
+BT
+/F1 18 Tf
+60 160 Td
+(ABC PDF Ready) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000059 00000 n 
+0000000116 00000 n 
+0000000242 00000 n 
+0000000341 00000 n 
+trailer
+<< /Root 1 0 R /Size 6 >>
+startxref
+411
+%%EOF`;
+
+export async function GET() {
+  return new Response(minimalPdf, {
+    headers: {
+      "Content-Type": "application/pdf",
+      "Content-Disposition": 'attachment; filename="abc-always-be-coloring.pdf"'
+    }
+  });
+}
