@@ -18,3 +18,27 @@ export function initials(name?: string | null) {
     .slice(0, 2)
     .toUpperCase();
 }
+
+export function getApiErrorMessage(error: unknown, fallback: string) {
+  if (typeof error === "object" && error !== null && "response" in error) {
+    const response = error.response;
+    if (
+      typeof response === "object" &&
+      response !== null &&
+      "data" in response &&
+      typeof response.data === "object" &&
+      response.data !== null &&
+      "error" in response.data &&
+      typeof response.data.error === "string" &&
+      response.data.error.trim()
+    ) {
+      return response.data.error;
+    }
+  }
+
+  if (error instanceof Error && error.message.trim()) {
+    return error.message;
+  }
+
+  return fallback;
+}

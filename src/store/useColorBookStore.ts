@@ -1,7 +1,7 @@
 "use client";
 
 import { create } from "zustand";
-import type { ColoringPage, DownloadFormat, OrderState, Plan, SearchImage } from "@/types";
+import type { BusinessTheme, ColoringPage, DownloadFormat, GenerationSource, OrderState, Plan, SearchImage } from "@/types";
 
 type Actions = {
   toggleImageSelection: (image: SearchImage) => void;
@@ -10,6 +10,8 @@ type Actions = {
   setUploadedResult: (payload: OrderState["uploadedResult"]) => void;
   setColoringPages: (pages: ColoringPage[]) => void;
   setSelectedImages: (images: SearchImage[]) => void;
+  setGenerationSource: (source: GenerationSource | null) => void;
+  setSelectedBusinessTheme: (theme: BusinessTheme | null) => void;
   setSelectedPlan: (plan: Plan) => void;
   setPaymentIntentId: (id: string) => void;
   setSelectedFormat: (format: DownloadFormat) => void;
@@ -21,6 +23,8 @@ const initialState: OrderState = {
   selectedImages: [],
   uploadedFile: null,
   coloringPages: [],
+  generationSource: null,
+  selectedBusinessTheme: null,
   selectedPlan: null,
   paymentIntentId: null,
   selectedFormat: null,
@@ -43,6 +47,8 @@ export const useColorBookStore = create<OrderState & Actions>((set) => ({
   setUploadedResult: (payload) => set({ uploadedResult: payload }),
   setColoringPages: (pages) => set({ coloringPages: pages }),
   setSelectedImages: (images) => set({ selectedImages: images }),
+  setGenerationSource: (source) => set({ generationSource: source }),
+  setSelectedBusinessTheme: (theme) => set({ selectedBusinessTheme: theme }),
   setSelectedPlan: (plan) => set({ selectedPlan: plan }),
   setPaymentIntentId: (id) => set({ paymentIntentId: id }),
   setSelectedFormat: (format) => set({ selectedFormat: format }),

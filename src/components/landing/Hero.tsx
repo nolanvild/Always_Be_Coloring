@@ -28,14 +28,17 @@ export function Hero() {
             Turn photos and ideas into printable coloring books in minutes.
           </h1>
           <p className="max-w-xl text-base leading-7 text-gray-600">
-            Search for scenes, upload your own images, convert them into crisp line art, and download device-ready PDFs after checkout.
+            Pull recent business themes from the trend pipeline, search for scenes, or upload your own images, then convert them into crisp line art and review before checkout.
           </p>
         </div>
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Button className="min-w-[180px]" onClick={() => goTo("/create/search")}>
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Button className="min-w-[180px]" onClick={() => goTo("/create/business")}>
+            Business themes
+          </Button>
+          <Button variant="secondary" className="min-w-[180px]" onClick={() => goTo("/create/search")}>
             Search images
           </Button>
-          <Button variant="secondary" className="min-w-[180px]" onClick={() => goTo("/create/upload")}>
+          <Button variant="ghost" className="min-w-[180px]" onClick={() => goTo("/create/upload")}>
             Upload a photo
           </Button>
         </div>

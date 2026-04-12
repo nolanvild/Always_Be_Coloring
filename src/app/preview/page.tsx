@@ -13,26 +13,36 @@ import { cn } from "@/lib/utils";
 
 export default function PreviewPage() {
   const router = useRouter();
-  const { coloringPages, selectedImages, uploadedResult } = useColorBookStore();
+  const { coloringPages, selectedImages, uploadedResult, generationSource, selectedBusinessTheme } = useColorBookStore();
   const [activePageId, setActivePageId] = useState<string | null>(null);
   const [view, setView] = useState<"coloring" | "original">("coloring");
 
   useEffect(() => {
     if (!coloringPages.length) {
-      router.replace("/create/search");
+      const fallbackRoute = generationSource === "upload"
+        ? "/create/upload"
+        : generationSource === "search"
+          ? "/create/search"
+          : "/create/business";
+      router.replace(fallbackRoute);
       return;
     }
     if (!activePageId) {
       setActivePageId(coloringPages[0]?.id ?? null);
     }
-  }, [activePageId, coloringPages, router]);
+  }, [activePageId, coloringPages, generationSource, router]);
 
   const activePage = useMemo(
     () => coloringPages.find((page) => page.id === activePageId) ?? coloringPages[0],
     [activePageId, coloringPages]
   );
 
-  const sourceCount = selectedImages.length || coloringPages.length;
+  const sourceCount = generationSource === "search" ? selectedImages.length || coloringPages.length : coloringPages.length;
+  const flowSummary = generationSource === "upload"
+    ? "Upload flow detected: single-image preview ready."
+    : generationSource === "business"
+      ? `Business flow detected: ${selectedBusinessTheme?.themeName ?? "Pipeline theme"} rendered through Recraft.`
+      : "Search flow detected: selected results bundled for your ABC set.";
 
   return (
     <main className="min-h-screen">
@@ -120,7 +130,8 @@ export default function PreviewPage() {
               <Card className="space-y-3 bg-gray-50 p-5 text-sm text-gray-600">
                 <div>AI detected outlines and simplified details for clean coloring.</div>
                 <div>Background cleanup and print-friendly contrast have been applied.</div>
-                <div>{uploadedResult ? "Upload flow detected: single-image preview ready." : "Search flow detected: selected results bundled for your ABC set."}</div>
+                <div>{uploadedResult ? "Upload route returned a placeholder source image for now." : "Original view shows the source brief that drove generation."}</div>
+                <div>{flowSummary}</div>
               </Card>
 
               <Button className="w-full justify-between" onClick={() => router.push("/payment")}>

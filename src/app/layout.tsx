@@ -7,7 +7,13 @@ import "@/styles/globals.css";
 
 export const metadata: Metadata = {
   title: "ABC (Always Be Coloring)",
-  description: "Generate custom coloring PDFs from prompts or uploads."
+  description: "Generate custom coloring PDFs from prompts or uploads.",
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png?v=1", type: "image/png", sizes: "32x32" }
+    ],
+    shortcut: "/favicon-32x32.png?v=1"
+  }
 };
 
 export default async function RootLayout({ children }: { children: ReactNode }) {

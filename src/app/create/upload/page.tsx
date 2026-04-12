@@ -9,12 +9,21 @@ import { ProgressBar } from "@/components/layout/ProgressBar";
 import { DropZone } from "@/components/create/DropZone";
 import { ColoringPreview } from "@/components/create/ColoringPreview";
 import { Card } from "@/components/ui/card";
+import { getApiErrorMessage } from "@/lib/utils";
 import { useColorBookStore } from "@/store/useColorBookStore";
 
 export default function UploadPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-  const { uploadedFile, setUploadedFile, uploadedResult, setUploadedResult, setColoringPages } = useColorBookStore();
+  const {
+    uploadedFile,
+    setUploadedFile,
+    uploadedResult,
+    setUploadedResult,
+    setColoringPages,
+    setGenerationSource,
+    setSelectedBusinessTheme
+  } = useColorBookStore();
 
   const previewUrl = useMemo(() => uploadedFile ? URL.createObjectURL(uploadedFile) : uploadedResult?.originalImageUrl, [uploadedFile, uploadedResult?.originalImageUrl]);
 
@@ -27,6 +36,8 @@ export default function UploadPage() {
     try {
       const response = await axios.post("/api/upload", formData);
       setUploadedResult(response.data);
+      setGenerationSource("upload");
+      setSelectedBusinessTheme(null);
       setColoringPages([{
         id: "upload-page-1",
         originalImageUrl: response.data.originalImageUrl,
@@ -34,8 +45,8 @@ export default function UploadPage() {
         label: file.name
       }]);
       toast.success("Image uploaded and converted.");
-    } catch {
-      toast.error("Upload failed. Please try another image.");
+    } catch (error) {
+      toast.error(getApiErrorMessage(error, "Upload failed. Please try another image."));
       setUploadedFile(null);
       setUploadedResult(null);
     } finally {
