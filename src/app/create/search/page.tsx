@@ -10,6 +10,7 @@ import { SearchBar } from "@/components/create/SearchBar";
 import { ImageGrid } from "@/components/create/ImageGrid";
 import { Button } from "@/components/ui/button";
 import { buildMockImages } from "@/lib/mock-data";
+import { getApiErrorMessage } from "@/lib/utils";
 import { useColorBookStore } from "@/store/useColorBookStore";
 import type { SearchImage } from "@/types";
 
@@ -18,7 +19,15 @@ export default function SearchPage() {
   const [prompt, setPrompt] = useState("cute woodland animals having a picnic");
   const [images, setImages] = useState<SearchImage[]>([]);
   const [loading, setLoading] = useState(false);
-  const { selectedImages, toggleImageSelection, clearSelectedImages, setColoringPages, setSelectedImages } = useColorBookStore();
+  const {
+    selectedImages,
+    toggleImageSelection,
+    clearSelectedImages,
+    setColoringPages,
+    setSelectedImages,
+    setGenerationSource,
+    setSelectedBusinessTheme
+  } = useColorBookStore();
 
   const performSearch = useCallback(async () => {
     setLoading(true);
@@ -45,13 +54,16 @@ export default function SearchPage() {
 
     try {
       const response = await axios.post("/api/convert", {
+        mode: "search_selection",
         imageIds: selectedImages.map((item) => item.id)
       });
       setSelectedImages(selectedImages);
+      setGenerationSource("search");
+      setSelectedBusinessTheme(null);
       setColoringPages(response.data.pages);
       router.push("/preview");
-    } catch {
-      toast.error("Conversion failed. Please try again.");
+    } catch (error) {
+      toast.error(getApiErrorMessage(error, "Search conversion failed."));
     }
   };
 
