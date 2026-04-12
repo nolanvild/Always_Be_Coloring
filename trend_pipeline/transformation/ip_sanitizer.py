@@ -19,8 +19,8 @@ import logging
 import re
 from typing import List, Tuple
 
-import config
 from filtering.content_filter import _get_blocklists
+from nlp_runtime import get_nlp
 
 logger = logging.getLogger(__name__)
 
@@ -30,16 +30,6 @@ _ENTITY_REPLACEMENTS = {
     "PRODUCT":      "",
     "WORK_OF_ART":  "a creative work",
 }
-
-_nlp = None
-
-
-def _get_nlp():
-    global _nlp
-    if _nlp is None:
-        import spacy
-        _nlp = spacy.load(config.SPACY_MODEL)
-    return _nlp
 
 
 def _apply_replacements(text: str, replacements: List[Tuple[int, int, str]]) -> str:
@@ -52,19 +42,20 @@ def _apply_replacements(text: str, replacements: List[Tuple[int, int, str]]) -> 
 
 def strip_ip_entities(text: str) -> str:
     """Remove named entities from text. Returns cleaned text."""
-    nlp = _get_nlp()
-    doc = nlp(text[:512])
-
     replacements: List[Tuple[int, int, str]] = []
+    nlp = get_nlp()
 
-    for ent in doc.ents:
-        label = ent.label_
-        if label not in _ENTITY_REPLACEMENTS:
-            continue
-        replacement = _ENTITY_REPLACEMENTS[label]
-        replacements.append((ent.start_char, ent.end_char, replacement))
+    if nlp is not None:
+        doc = nlp(text[:512])
 
-    result = _apply_replacements(text, replacements)
+        for ent in doc.ents:
+            label = ent.label_
+            if label not in _ENTITY_REPLACEMENTS:
+                continue
+            replacement = _ENTITY_REPLACEMENTS[label]
+            replacements.append((ent.start_char, ent.end_char, replacement))
+
+    result = _apply_replacements(text, replacements) if replacements else text
 
     # Manual blocklist pass: check remaining text word by word
     blocklists = _get_blocklists()

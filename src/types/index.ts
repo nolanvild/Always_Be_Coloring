@@ -23,6 +23,20 @@ export type ColoringPage = {
   label: string;
 };
 
+export type BusinessTheme = {
+  id: string;
+  themeName: string;
+  description: string;
+  category: string;
+  trendingReason: string;
+  createdAt: string;
+  score: number;
+  pageIdeas: string[];
+  keyStrengths: string[];
+};
+
+export type GenerationSource = "search" | "upload" | "business";
+
 export type Plan = {
   id: "single" | "book" | "unlimited";
   name: string;
@@ -47,6 +61,8 @@ export type OrderState = {
   selectedImages: SearchImage[];
   uploadedFile: File | null;
   coloringPages: ColoringPage[];
+  generationSource: GenerationSource | null;
+  selectedBusinessTheme: BusinessTheme | null;
   selectedPlan: Plan | null;
   paymentIntentId: string | null;
   selectedFormat: DownloadFormat | null;

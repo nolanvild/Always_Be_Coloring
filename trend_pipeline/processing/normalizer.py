@@ -1,40 +1,22 @@
 """
 Text normalizer: cleans raw signal terms and extracts noun phrases
-using spaCy (en_core_web_sm).
+using spaCy when available.
 
 Setup (one-time):
-  pip install spacy
-  python -m spacy download en_core_web_sm
+  uv sync
+  uv run python -m spacy download en_core_web_sm
 """
 
 from __future__ import annotations
 
 import logging
 import re
-import time
 from typing import List
 
-import config
 from ingestion.base_ingester import RawSignal
+from nlp_runtime import get_nlp
 
 logger = logging.getLogger(__name__)
-
-_nlp = None
-
-
-def _get_nlp():
-    global _nlp
-    if _nlp is None:
-        try:
-            import spacy
-            _nlp = spacy.load(config.SPACY_MODEL)
-            logger.info("spaCy model '%s' loaded", config.SPACY_MODEL)
-        except OSError:
-            raise OSError(
-                f"spaCy model '{config.SPACY_MODEL}' not found. "
-                f"Run: python -m spacy download {config.SPACY_MODEL}"
-            )
-    return _nlp
 
 
 _STOP_PATTERN = re.compile(r"[^a-z0-9\s\-]")
@@ -50,7 +32,10 @@ def _clean_text(text: str) -> str:
 
 def extract_noun_phrases(text: str) -> List[str]:
     """Return lemmatized noun chunks from text, filtered to meaningful length."""
-    nlp  = _get_nlp()
+    nlp = get_nlp()
+    if nlp is None:
+        return []
+
     doc  = nlp(text[:512])  # cap length to avoid slow processing
     phrases = []
     for chunk in doc.noun_chunks:

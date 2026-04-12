@@ -28,11 +28,14 @@ export function Navbar({ showMarketingLinks = false }: NavbarProps) {
     <header className="sticky top-0 z-40 border-b border-white/60 bg-white/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.svg" alt="ABC (Always Be Coloring)" width={28} height={28} />
-          <div>
-            <div className="text-base font-semibold text-gray-900">ABC</div>
-            <div className="text-[11px] text-gray-500">Always Be Coloring</div>
-          </div>
+          <Image
+            src="/ABC-logo.png"
+            alt="ABC (Always Be Coloring)"
+            width={110}
+            height={60}
+            className="h-auto w-[110px]"
+            priority
+          />
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">

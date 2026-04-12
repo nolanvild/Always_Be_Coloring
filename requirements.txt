@@ -6,7 +6,7 @@ tweepy==4.14.0
 
 # NLP
 spacy==3.7.4
-# After install run: python -m spacy download en_core_web_sm
+# After install run: uv run python -m spacy download en_core_web_sm
 nltk==3.8.1
 
 # Scheduling
