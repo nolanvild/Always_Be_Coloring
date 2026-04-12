@@ -18,9 +18,7 @@ export async function POST(request: Request) {
   const intent = await stripe.paymentIntents.create({
     amount,
     currency: "usd",
-    automatic_payment_methods: {
-      enabled: true
-    },
+    payment_method_types: ["card"],
     metadata: {
       pageCount: String(body.pageCount ?? 1),
       planId: String(body.planId ?? "book")

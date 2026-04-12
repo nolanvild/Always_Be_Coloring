@@ -13,6 +13,7 @@ import { PaymentMethodTabs, type PaymentTab } from "@/components/payment/Payment
 import { CardForm } from "@/components/payment/CardForm";
 import { OrderSummary } from "@/components/payment/OrderSummary";
 import { Card } from "@/components/ui/card";
+import { StripeTestGuide } from "@/components/payment/StripeTestGuide";
 import { PLANS } from "@/lib/plans";
 import { formatPrice } from "@/lib/utils";
 import { useColorBookStore } from "@/store/useColorBookStore";
@@ -56,6 +57,7 @@ export default function PaymentPage() {
               <Elements stripe={stripePromise}>
                 <CheckoutPanel amount={activePlan.price} />
               </Elements>
+              <StripeTestGuide />
             </div>
             <OrderSummary
               thumbnails={coloringPages.map((page) => page.coloringImageUrl)}
