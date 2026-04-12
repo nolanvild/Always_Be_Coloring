@@ -1,0 +1,15 @@
+# Religious terms blocklist
+# Note: educational/cultural references (e.g. "ancient temples", "cathedral architecture")
+# are handled via ambiguity resolution — these are the high-risk terms.
+jihad
+crusade
+fatwa
+heresy
+blasphemy
+cult
+sect
+religious extremism
+religious persecution
+sharia
+inquisition
+excommunication

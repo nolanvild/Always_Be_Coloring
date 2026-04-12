@@ -1,0 +1,39 @@
+# Violence and harmful content blocklist
+murder
+killing
+shooting
+stabbing
+assault
+attack
+bomb
+bombing
+terrorism
+terrorist
+massacre
+genocide
+war crime
+execution
+torture
+rape
+abuse
+violence
+violent
+weapon
+gun violence
+mass shooting
+school shooting
+suicide
+self harm
+death toll
+casualty
+hostage
+kidnapping
+trafficking
+drug cartel
+gang violence
+explosion
+arson
+vandalism
+riot
+looting
+hate crime

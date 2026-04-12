@@ -1,0 +1,17 @@
+[project]
+name = "autonomous-coloring-books"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.10"
+dependencies = [
+    "apscheduler>=3.11.2",
+    "feedparser>=6.0.12",
+    "nltk>=3.9.4",
+    "pandas>=2.3.3",
+    "praw>=7.8.1",
+    "python-dotenv>=1.2.2",
+    "pytrends>=4.9.2",
+    "requests>=2.33.1",
+    "spacy>=3.8.14",
+    "tweepy>=4.16.0",
+]
