@@ -10,10 +10,9 @@ export const metadata: Metadata = {
   description: "Generate custom coloring PDFs from prompts or uploads.",
   icons: {
     icon: [
-      { url: "/favicon.ico?v=2", sizes: "any" }
+      { url: "/favicon-32x32.png?v=1", type: "image/png", sizes: "32x32" }
     ],
-    shortcut: "/favicon.ico?v=2",
-    apple: "/favicon.ico?v=2"
+    shortcut: "/favicon-32x32.png?v=1"
   }
 };
 
