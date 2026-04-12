@@ -6,7 +6,26 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 const previews = [
-  "Jungle lion", "Mermaid cove", "Space dog", "Castle owl"
+  {
+    label: "Jungle lion",
+    original: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=900&q=80",
+    coloring: "/lion-coloring-book.png"
+  },
+  {
+    label: "Mermaid cove",
+    original: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+    coloring: "/beach-coloring-book.png"
+  },
+  {
+    label: "Space dog",
+    original: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80",
+    coloring: "/dogs-coloring-book.png"
+  },
+  {
+    label: "Castle owl",
+    original: "https://images.unsplash.com/photo-1543549790-8b5f4a028cfb?auto=format&fit=crop&w=900&q=80",
+    coloring: "/owl-coloring-book.png"
+  }
 ];
 
 export function Hero() {
@@ -45,20 +64,35 @@ export function Hero() {
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        {previews.map((label, index) => (
-          <div key={label} className="overflow-hidden rounded-2xl border border-purple-mid/30 bg-white shadow-soft">
+        {previews.map((preview) => (
+          <div key={preview.label} className="overflow-hidden rounded-2xl border border-purple-mid/30 bg-white shadow-soft">
             <div className="relative h-40 bg-purple-light">
               <Image
-                src={`https://dummyimage.com/600x400/${index % 2 === 0 ? "ffffff" : "f6f5ff"}/2b2b2b&text=${encodeURIComponent(label)}`}
-                alt={label}
+                src={preview.original}
+                alt={`${preview.label} original sample`}
                 fill
                 unoptimized
                 className="object-cover"
               />
+              <div className="absolute inset-0 animate-coloring-wipe">
+                <Image
+                  src={preview.coloring}
+                  alt={`${preview.label} coloring page version`}
+                  fill
+                  unoptimized
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute inset-y-0 w-0.5 animate-coloring-wipe-line bg-white shadow-[0_0_18px_rgba(0,0,0,0.35)]" />
+              <div className="absolute left-3 top-3 rounded-full bg-purple-brand px-2 py-1 text-[11px] font-medium text-white shadow-sm">
+                Coloring
+              </div>
+              <div className="absolute right-3 top-3 rounded-full bg-white/90 px-2 py-1 text-[11px] font-medium text-gray-700 shadow-sm">
+                Original
+              </div>
             </div>
             <div className="p-4">
-              <div className="text-sm font-medium text-gray-900">{label}</div>
-              <div className="text-xs text-gray-500">Preview coloring page</div>
+              <div className="text-sm font-medium text-gray-900">{preview.label}</div>
             </div>
           </div>
         ))}

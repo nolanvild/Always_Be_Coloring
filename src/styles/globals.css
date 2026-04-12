@@ -22,3 +22,35 @@ input:focus-visible,
 select:focus-visible {
   @apply outline-none ring-2 ring-purple-brand ring-offset-2;
 }
+
+@keyframes coloring-wipe {
+  0%,
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  45%,
+  55% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes coloring-wipe-line {
+  0%,
+  100% {
+    left: 0%;
+  }
+
+  45%,
+  55% {
+    left: 100%;
+  }
+}
+
+.animate-coloring-wipe {
+  animation: coloring-wipe 4.8s ease-in-out infinite;
+}
+
+.animate-coloring-wipe-line {
+  animation: coloring-wipe-line 4.8s ease-in-out infinite;
+}
