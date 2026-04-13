@@ -1,4 +1,5 @@
 import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
+import sharp from "sharp";
 import { DOWNLOAD_FORMATS } from "@/lib/formats";
 
 type PageInput = {
@@ -21,8 +22,49 @@ function pxToPt(px: number, ppi: number): number {
   return (px / ppi) * 72;
 }
 
-function isJpeg(url: string): boolean {
-  return /\.(jpg|jpeg)/i.test(url.split("?")[0]);
+/**
+ * Resolve an image URL (HTTP/HTTPS or data: URI) to raw bytes + MIME type.
+ */
+async function resolveImage(url: string): Promise<{ bytes: Uint8Array; mimeType: string }> {
+  if (url.startsWith("data:")) {
+    // data:[<mediatype>][;base64],<data>
+    const commaIdx = url.indexOf(",");
+    const meta = url.slice(5, commaIdx); // strip "data:"
+    const isBase64 = meta.endsWith(";base64");
+    const mimeType = isBase64 ? meta.slice(0, -7) : meta || "image/png";
+    const dataStr = url.slice(commaIdx + 1);
+    const bytes = isBase64
+      ? Uint8Array.from(atob(dataStr), (c) => c.charCodeAt(0))
+      : new TextEncoder().encode(decodeURIComponent(dataStr));
+    return { bytes, mimeType };
+  }
+
+  const res = await fetch(url, { cache: "no-store" });
+  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
+  const mimeType = res.headers.get("content-type")?.split(";")[0] ?? "image/png";
+  const bytes = new Uint8Array(await res.arrayBuffer());
+  return { bytes, mimeType };
+}
+
+async function embedImage(pdfDoc: PDFDocument, url: string) {
+  const { bytes, mimeType } = await resolveImage(url);
+
+  // SVG must be rasterised to PNG before embedding
+  if (mimeType.includes("svg")) {
+    const pngBytes = await sharp(Buffer.from(bytes)).png().toBuffer();
+    return pdfDoc.embedPng(new Uint8Array(pngBytes));
+  }
+
+  if (mimeType === "image/jpeg" || mimeType === "image/jpg") {
+    return pdfDoc.embedJpg(bytes);
+  }
+
+  // Default: try PNG, fallback to JPEG
+  try {
+    return await pdfDoc.embedPng(bytes);
+  } catch {
+    return await pdfDoc.embedJpg(bytes);
+  }
 }
 
 export async function POST(request: Request) {
@@ -66,35 +108,15 @@ export async function POST(request: Request) {
   for (let i = 0; i < pages.length; i++) {
     const { coloringImageUrl, label } = pages[i];
 
-    let imageBytes: ArrayBuffer;
-    try {
-      const res = await fetch(coloringImageUrl);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      imageBytes = await res.arrayBuffer();
-    } catch {
-      // Skip images that can't be fetched; add a blank placeholder page
-      const blankPage = pdfDoc.addPage([pageWidthPt, pageHeightPt]);
-      const msg = label ? `Could not load: ${label}` : "Image unavailable";
-      blankPage.drawText(msg, { x: 50, y: pageHeightPt / 2, size: 14, font, color: rgb(0.5, 0.5, 0.5) });
-      continue;
-    }
-
     let embeddedImage;
     try {
-      embeddedImage = isJpeg(coloringImageUrl)
-        ? await pdfDoc.embedJpg(imageBytes)
-        : await pdfDoc.embedPng(imageBytes);
-    } catch {
-      // Fallback: try the other format
-      try {
-        embeddedImage = isJpeg(coloringImageUrl)
-          ? await pdfDoc.embedPng(imageBytes)
-          : await pdfDoc.embedJpg(imageBytes);
-      } catch {
-        const blankPage = pdfDoc.addPage([pageWidthPt, pageHeightPt]);
-        blankPage.drawText("Image could not be embedded", { x: 50, y: pageHeightPt / 2, size: 14, font, color: rgb(0.5, 0.5, 0.5) });
-        continue;
-      }
+      embeddedImage = await embedImage(pdfDoc, coloringImageUrl);
+    } catch (err) {
+      const blankPage = pdfDoc.addPage([pageWidthPt, pageHeightPt]);
+      const msg = label ? `Could not load: ${label}` : "Image unavailable";
+      console.error(`[download] Failed to embed page ${i + 1}:`, err);
+      blankPage.drawText(msg, { x: 50, y: pageHeightPt / 2, size: 14, font, color: rgb(0.5, 0.5, 0.5) });
+      continue;
     }
 
     const page = pdfDoc.addPage([pageWidthPt, pageHeightPt]);

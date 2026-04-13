@@ -4,6 +4,7 @@ import { Buffer } from "node:buffer";
 import type { ColoringPage } from "@/types";
 
 export const VECTOR_MODEL = "recraftv3_vector";
+export const RASTER_MODEL = "recraftv3";
 export const DEFAULT_SIZE = "3:4";
 const RECRAFT_BASE_URL = "https://external.api.recraft.ai/v1";
 
@@ -125,7 +126,7 @@ async function requestBusinessImage(input: BusinessGenerationInput): Promise<str
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      model: VECTOR_MODEL,
+      model: RASTER_MODEL,
       style: profilePrompts[profile].style,
       prompt: buildBusinessPrompt(input),
       size: DEFAULT_SIZE,
@@ -153,7 +154,7 @@ async function downloadAssetAsDataUrl(assetUrl: string): Promise<string> {
     throw new Error(`Generated asset download failed with status ${response.status}.`);
   }
 
-  const contentType = response.headers.get("content-type") || "image/svg+xml";
+  const contentType = response.headers.get("content-type") || "image/png";
   const bytes = await response.arrayBuffer();
   return toDataUrl(contentType, bytes);
 }
@@ -191,7 +192,7 @@ export async function generateSearchColoringPage(image: SearchImageInput): Promi
   form.append("image", blob, "source.jpg");
   form.append("prompt", "printable coloring book page, simple bold black outlines, large colorable regions, no color, no fill, no shadows, white background, line art");
   form.append("strength", "0.5");
-  form.append("model", VECTOR_MODEL);
+  form.append("model", RASTER_MODEL);
   form.append("style", "Line art");
 
   const response = await fetch(`${RECRAFT_BASE_URL}/images/imageToImage`, {

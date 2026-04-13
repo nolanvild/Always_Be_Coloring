@@ -7,7 +7,12 @@
       "mcp__plugin_context7_context7__resolve-library-id",
       "mcp__plugin_context7_context7__query-docs",
       "mcp__chrome-devtools__take_screenshot",
-      "mcp__chrome-devtools__list_pages"
+      "mcp__chrome-devtools__list_pages",
+      "mcp__chrome-devtools__list_console_messages",
+      "mcp__chrome-devtools__evaluate_script",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm approve-builds:*)",
+      "Bash(node -e \"const s = require\\('sharp'\\); s\\(Buffer.from\\('<svg xmlns=\\\\\"http://www.w3.org/2000/svg\\\\\" width=\\\\\"10\\\\\" height=\\\\\"10\\\\\"><rect width=\\\\\"10\\\\\" height=\\\\\"10\\\\\" fill=\\\\\"red\\\\\"/></svg>'\\)\\).png\\(\\).toBuffer\\(\\).then\\(b => console.log\\('sharp ok, size:', b.length\\)\\).catch\\(e => console.error\\('sharp error:', e.message\\)\\)\")"
     ]
   }
 }
