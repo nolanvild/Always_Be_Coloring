@@ -1,17 +1,26 @@
 import type { ColoringPage, SearchImage } from "@/types";
 
-const SEEDS = [
-  "Lion cub", "Rocket cat", "Garden fairy", "Dinosaur parade", "Sea turtle",
-  "Castle dragon", "Space fox", "Rainforest frog", "Unicorn meadow", "Robot owl"
+const MOCK_IMAGES: Pick<SearchImage, "id" | "label">[] = [
+  { id: "img-1",  label: "Wooden pier at dawn" },
+  { id: "img-2",  label: "Dock over calm water" },
+  { id: "img-3",  label: "Golden wheat field" },
+  { id: "img-4",  label: "Mountain sunset" },
+  { id: "img-5",  label: "Coastal lighthouse" },
+  { id: "img-6",  label: "Misty ocean horizon" },
+  { id: "img-7",  label: "Rocky shoreline" },
+  { id: "img-8",  label: "Pebble beach waves" },
+  { id: "img-9",  label: "Vintage roadside sign" },
+  { id: "img-10", label: "Desert landscape" },
 ];
 
 export function buildMockImages(prompt: string): SearchImage[] {
-  return SEEDS.map((label, index) => {
-    const text = encodeURIComponent(`${prompt || label} ${index + 1}`);
+  const base = prompt.trim() || "coloring book";
+  return MOCK_IMAGES.map(({ id, label }, index) => {
+    const seed = encodeURIComponent(`${base} ${index + 1}`);
     return {
-      id: `img-${index + 1}`,
-      url: `https://picsum.photos/seed/${text}/1200/900`,
-      thumbnailUrl: `https://picsum.photos/seed/${text}/600/400`,
+      id,
+      url: `https://picsum.photos/seed/${seed}/1200/900`,
+      thumbnailUrl: `https://picsum.photos/seed/${seed}/600/400`,
       label,
       width: 1200,
       height: 900,
